@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_tuto"
+        android:icon="@drawable/lista"
+        android:title="Tutoriales"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_res"
+        android:icon="@drawable/res"
+        android:title="resistencias"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_device"
+        android:icon="@drawable/device"
+        android:title="Dispositivos"
+        app:showAsAction="always" />
+
+
+
+</menu>

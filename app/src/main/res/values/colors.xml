@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#580202</color>
+    <color name="colorPrimary">#7E0404</color>
+    <color name="colorAccent">#F3F5F5</color>
+
+    <color name="cardview">#580202</color>
+    <color name="letras">#FFFFFF</color>
+    <color name="gris">#4DFFF4F4</color>
+    <color name="letra_negras">#F8000000</color>
+</resources>

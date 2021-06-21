@@ -1,0 +1,458 @@
+<resources>
+    <string name="app_name">MonziBox</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="descripcion">Descripcion</string>
+
+    <string name="primerapractica_nombre">Encendido de un led</string>
+    <string name="primerapractica_descripcion">Un LED es un diodo emisor de luz, es decir, un tipo particular de diodo que emite luz al ser atravesado por una corriente eléctrica. Los diodos (emisor de luz, o no) son unos de los dispositivos electrónicos fundamentales.</string>
+    <string name="primerapractica_info"> •\t1 Protoboard.\n
+                •\t1 PIC18F4620.\n
+                •\t1 Resistencia de 10 kΩ.\n
+                •\tCristal oscilador de 20 MHz.\n
+                •\t2 Capacitores cerámicos de 22 pF.\n
+                •\t1 LED.\n
+                •\tFuente de voltaje de 5 V.\n
+                •\t1 Resistencia de 220 Ω.\n
+                •\tCables dupont.\n</string>
+
+    <string name="Primerapractica_Code">#include 18f4620.h>       //Se declara el pic que utilizaremos\n
+#fuses HS,NOWDT,NOPROTECT,NOLVP,NOPUT,NOMCLR //Se declaran los fusibles\n
+#use delay(clock=20000000)//Se inicia el cristal oscilador a 20MHz.\n
+#define led pin_b0        //Se declara el puerto de salida del led en el puerto B0\n
+standard_io(b);           //Se declara el puerto b como entradas y salidas\n
+int A=500;                //Se declara la variable "A" que funcionara como el tiempo en ms del delay.\n
+void main(){       //Incia la funcion principal\n
+  output_high(led);\n
+   delay_ms(A);\n
+}"</string>
+
+    <string name="Segundapractica_Code">#include 18f4620.h>       //Se declara el pic que utilizaremos\n
+#fuses HS,NOWDT,NOPROTECT,NOLVP,NOPUT,NOMCLR //Se declaran los fusibles\n
+#use delay(clock=20000000)//Se inicia el cristal oscilador a 20MHz.\n
+#define led pin_b0        //Se declara el puerto de salida del led en el puerto B0\n
+standard_io(b);           //Se declara el puerto b como entradas y salidas\n
+int A=500;                //Se declara la variable "A" que funcionara como el tiempo en ms del delay.\n
+void main(){       //Incia la funcion principal\n
+  output_high(led);\n
+   delay_ms(A);\n
+}"</string>
+
+    <string name="Tercerapractica_code">#include 18f4620.h>                   //Incluimos el pic con el cual vamos a trabajar
+#fuses HS,NOWDT,NOPROTECT,NOLVP,NOPUT,NOMCLR//declaramos los fusbiles, (HS=Oscilador externo, NOWDT=NO watchdog)
+#use delay(clock=20000000)             //Velocidad del oscilador de 20 MHz
+#define boton pin_A0                   //definimos por nombre los puertos que usaremos en el pic
+#define Led1 pin_C2
+#define Led2 pin_C4
+#define Led3 pin_C5
+#use standard_io(B)                    //habilitamos los puertos B,A y C como entradas o salidas
+#use standard_io(A)
+#use standard_io(c)
+int A=500;                             //declaramos la variable A, que servira como el tiempo en ms
+void main(){
+   Output_low(Led1);                   //inicamos el programa principal apagando todos los leds.
+   Output_low(Led2);
+   Output_low(Led3);
+   delay_ms(200);
+   while(1){                           //inicia el bucle while
+     if(input(boton)==1){              //condicionante para saber si el boton fue presionado por el usuario.
+         output_high(Led1);            //encendido del primer led
+         delay_ms(A);                  //se tiene un delay de "A" ms
+         output_high(Led2);
+         delay_ms(A);
+         output_high(Led3);
+         delay_ms(A);
+         output_low(Led1);            // se apaga el primer led
+         delay_ms(A);                 //se tiene un delay de "A" ms
+         output_low(Led2);
+         delay_ms(A);
+         output_low(Led3);
+         delay_ms(A);
+
+      }
+   }
+}</string>
+
+    <string name="Cuartapractica_code">#include 18f4620.h>                //Incluimos el pic con el cual vamos a trabajar
+#fuses HS,NOWDT,NOPROTECT,NOLVP,NOPUT,NOMCLR//declaramos los fusbiles, (HS=Oscilador externo, NOWDT=NO watchdog)
+#use delay(clock=20000000)          //Velocidad del oscilador de 20 MHz
+#define led1 PIN_C2                 //definimos por nombre los puertos que usaremos en el pic
+#define led2 PIN_C4
+#define led3 PIN_C5
+#define boton PIN_A0
+standard_io(b);                     //habilitamos el puerto B como entradas o salidas
+int contador=0;                     //declaracion de variables.
+int val = 0;
+int estado = 0;
+int valanterior = 0;
+int A=500;
+void main(){                        //inicio del programa principal
+
+   while(1){                        //bucle while
+      estado = input(boton);
+      if(estado!=valanterior){
+         if(estado == 1){
+            contador++;
+      }
+}
+      else{
+}
+         valanterior = estado;
+         switch(contador){
+            case 1: output_high(led1);
+            break;
+            case 2: output_high(led2);
+            break;
+            case 3: output_high(led3);
+            break;
+            default:
+               output_low(led1);
+               output_low(led2);
+               output_low(led3);
+               contador=0;
+
+   }
+   }
+}
+</string>
+
+    <string name="Quintapractica_code">#include 18f4620.h>                   //Incluimos el pic con el cual vamos a trabajar
+#fuses HS,NOWDT,NOPROTECT,NOLVP,NOPUT,NOMCLR//declaramos los fusbiles, (HS=Oscilador externo, NOWDT=NO watchdog)
+#use delay(clock=20000000)             //Velocidad del oscilador de 20 MHz
+#use standard_io(B)                    //habilitamos el puerto b como entradas o salidas
+#define a pin_b0
+#define b pin_b1
+#define c pin_b2
+#define d pin_b3
+#define e pin_b4
+#define f pin_b5
+#define g pin_b6
+int Z =1000;                            //declaracion de variable
+
+void num_0(){
+   output_high(a);          //configuracion de las salidas para dar numero 0
+   output_high(b);
+   output_high(c);
+   output_high(d);
+   output_high(e);
+   output_high(f);
+   output_low(g);
+   delay_ms(Z);
+}
+void num_1(){
+   output_low(a);          //configuracion de las salidas para dar numero 1
+   output_high(b);
+   output_high(c);
+   output_low(d);
+   output_low(e);
+   output_low(f);
+   output_low(g);
+   delay_ms(Z);
+}
+void num_2(){
+   output_high(a);       //configuracion de las salidas para dar numero 2
+   output_high(b);
+   output_low(c);
+   output_high(d);
+   output_high(e);
+   output_low(f);
+   output_high(g);
+   delay_ms(Z);
+}
+void num_3(){
+   output_high(a);       //configuracion de las salidas para dar numero 3
+   output_high(b);
+   output_high(c);
+   output_high(d);
+   output_low(e);
+   output_low(f);
+   output_high(g);
+   delay_ms(Z);
+}
+void num_4(){
+   output_low(a);        //configuracion de las salidas para dar numero 4
+   output_high(b);
+   output_high(c);
+   output_low(d);
+   output_low(e);
+   output_high(f);
+   output_high(g);
+   delay_ms(Z);
+}
+void num_5(){
+   output_high(a);       //configuracion de las salidas para dar numero 5
+   output_low(b);
+   output_high(c);
+   output_high(d);
+   output_low(e);
+   output_high(f);
+   output_high(g);
+   delay_ms(Z);
+}
+void num_6(){
+   output_high(a);       //configuracion de las salidas para dar numero 6
+   output_low(b);
+   output_high(c);
+   output_high(d);
+   output_high(e);
+   output_high(f);
+   output_high(g);
+   delay_ms(Z);
+}
+void num_7(){
+   output_high(a);         //configuracion de las salidas para dar numero 7
+   output_high(b);
+   output_high(c);
+   output_low(d);
+   output_low(e);
+   output_low(f);
+   output_low(g);
+   delay_ms(Z);
+}
+void num_8(){
+   output_high(a);          //configuracion de las salidas para dar numero 8
+   output_high(b);
+   output_high(c);
+   output_high(d);
+   output_high(e);
+   output_high(f);
+   output_high(g);
+   delay_ms(Z);
+}
+void num_9(){
+   output_high(a);          //configuracion de las salidas para dar numero 9
+   output_high(b);
+   output_high(c);
+   output_low(d);
+   output_low(e);
+   output_high(f);
+   output_high(g);
+   delay_ms(Z);
+}
+
+
+void main(){                           //inicia programa principal
+   output_low(a);                 //iniciamos el programa con todos los puertos apagados.
+   output_low(b);
+   output_low(c);
+   output_low(d);
+   output_low(e);
+   output_low(f);
+   output_low(g);
+
+   while(1){                           //bucle while
+       num_0();
+       num_1();
+       num_2();
+       num_3();
+       num_4();
+       num_5();
+       num_6();
+       num_7();
+       num_8();
+       num_9();
+
+   }
+}</string>
+
+    <string name="Segundapractica_nombre">Encendido de un buzzer.</string>
+    <string name="Segundapractica_descripcion">En esta práctica aprenderás cómo usar un buzzer (o un piezoeléctrico) con el PIC18F4620. Los buzzers pueden ser encontrados en dispositivos de alarmas, computadoras, timers y la confimación de la entrada realizada por un usuario como un click del mouse o un botón presionado.</string>
+    <string name="Segundapractica_info"> •\t 1 Protoboard.\n
+•\t 1 PIC18F4620.\n
+•\t 1 Resistencia de 10 kΩ.\n
+•\t Cristal oscilador de 20 MHz.\n
+•\t 2 Capacitores cerámicos de 22 pF.\n
+•\t Fuente de voltaje de 5 V.\n
+•\t 1 Buzzer.\n
+•\t Cables dupont.\n
+</string>
+
+    <string name="TerceraPractica_nombre">Encendido y secuencia de LEDs, mediante un push button.</string>
+    <string name="TerceraPractica_descripcion">En esta práctica haremos un encendido y apagado de LEDs en secuencia utilizando el PIC18F4620. Esta práctica es similar a la primera, solamente que veremos cómo se pueden usar mayores cantidades de salidas digitales para controlar más LEDs y los encenderemos cuando nosotros deseemos presionar el push button.</string>
+    <string name="TerceraPractica_info">
+ •\t 1 Protoboard.\n
+ •\t 1 PIC18F4620.\n
+ •\t 2 Resistencias de 10 kΩ.\n
+ •\t Cristal oscilador de 20 MHz.\n
+ •\t 2 capacitores cerámicos de 22 pF.\n
+ •\t Cables dupont.\n
+ •\t Fuente de voltaje de 5 V.\n
+ •\t 1 Push button.\n
+ •\t 3 LEDs.\n
+ •\t 3 Resistencias de 220 Ω.\n
+</string>
+
+    <string name="CuartapPractica_nombre">Configuración para evitar el efecto rebote del push button.</string>
+    <string name="CuartapPractica_descripcion">En esta lección aprenderás que es y cómo evitar el antirrebote o anti-rebote con PIC provocado por sistemas mecánicos en circuitos electrónicos. Este ejemplo práctico lo realizaremos usando un microcontrolador PIC18F4620.</string>
+    <string name="CuartapPractica_info">
+        •\t 1 Protoboard.\n
+ •\t 1 PIC18F4620.\n
+ •\t 2 Resistencias de 10 kΩ.\n
+ •\t Cristal oscilador de 20 MHz.\n
+ •\t 2 Capacitores cerámicos de 22 pF.\n
+ •\t Cables dupont.\n
+ •\t Fuente de voltaje de 5 V.\n
+ •\t 1 Push button.\n
+ •\t 3 LEDs.\n
+ •\t 3 Resistencias de 220 Ω.\n
+</string>
+
+    <string name="QuintaPractica_nombre">Control y manejo de display de 7 segmentos.</string>
+    <string name="QuintaPractica_descripcion">El display LED de 7 segmentos es un componente electrónico que nos permite visualizar un valor numérico para una determinada aplicación. Cuando se quiere mostrar datos en el display, existen dos opciones para hacerlo; una opción es utilizar un decodificador BCD a 7 segmentos después del microcontrolador, y otra es generar con el mismo microcontrolador el código 7 segmentos equivalente a cada número de 0 a 9.</string>
+    <string name="QuintaPractica_info">•\t 1 Protoboard.\n
+ •\t 1 PIC18F4620.\n
+ •\t 1 Resistencia de 10 kΩ.\n
+        •\t Cristal oscilador de 20 MHz.\n
+ •\t 2 Capacitores cerámicos de 22 pF.\n
+ •\t Cables dupont.\n
+ •\t Fuente de voltaje de 5 V.\n
+        •\t Resistencias de 220Ω\n
+        •\t 1 Display de 7 segmentos cátodo común\n
+    </string>
+
+    <string name="SextaPractica_nombre">Encendido y despliegue de mensajes de LCD 16x2.</string>
+    <string name="SextaPractica_descripcion">El display LM016 puede mostrar los distintos caracteres en su pantalla LCD de 16x2. Es
+una herramienta bastante necesaria para pruebas donde requerimos observar los valores
+o desplegar mensajes respecto a la práctica que estemos realizando. En la siguiente
+practica enseñaremos a desplegar el clásico “Hola mundo” en donde aprenderás los
+comandos necesarios para manejar la LCD.
+</string>
+    <string name="SextaPractica_info">•\t 1 Protoboard.\n
+ •\t 1 PIC18F4620.\n
+ •\t 1 Resistencia de 10 kΩ.\n
+        •\t Cristal oscilador de 20 MHz.\n
+ •\t 2 Capacitores cerámicos de 22 pF.\n
+ •\t Cables dupont.\n
+ •\t Fuente de voltaje de 5 V.\n
+        •\t 1 Potenciometro de 10KΩ\n
+        •\t 1 LCD 16x2\n
+    </string>
+
+
+    <string name="SeptimaPractica_nombre">Teclado Matricial</string>
+    <string name="SeptimaPractica_descripcion">El teclado matricial es una herramienta la cual nos ayuda a ingresar los números del 0 al 9
+a nuestro microcontrolador. En la siguiente practica con la ayuda de la LCD 16x2
+mostraremos en pantalla los números que nosotros digitemos mediante un teclado
+matricial de 4x3.
+</string>
+
+    <string name="SeptimaPractica_info">•\t 1 Protoboard.\n
+ •\t 1 PIC18F4620.\n
+ •\t 1 Resistencia de 10 kΩ.\n
+        •\t Cristal oscilador de 20 MHz.\n
+ •\t 2 Capacitores cerámicos de 22 pF.\n
+ •\t Cables dupont.\n
+ •\t Fuente de voltaje de 5 V.\n
+        •\t 1 Potenciometro de 10KΩ\n
+        •\t 1 LCD 16x2\n
+                •\t 1 Teclado matricial\n
+
+    </string>
+
+    <string name="OctavaPractica_nombre">Sensor de temperatura LM35</string>
+    <string name="OctavaPractica_descripcion">En esta práctica aprenderás a tomar las mediciones de temperatura de tu entorno con
+ayuda del sensor LM35. Este sensor de temperatura es un dispositivo que toma datos
+analógicamente por lo cual deberemos hacer la conversión y la mostraremos en la
+pantalla LCD de 16x2.
+</string>
+
+    <string name="OctavaPractica_info">•\t 1 Protoboard.\n
+ •\t 1 PIC18F4620.\n
+ •\t 1 Resistencia de 10 kΩ.\n
+        •\t Cristal oscilador de 20 MHz.\n
+ •\t 2 Capacitores cerámicos de 22 pF.\n
+ •\t Cables dupont.\n
+ •\t Fuente de voltaje de 5 V.\n
+        •\t 1 Potenciometro de 10KΩ\n
+        •\t 1 LCD 16x2\n
+                •\t 1 Sensor LM35\n</string>
+
+    <string name="NovenaPractica_nombre">Conversión analógico digital (voltímetro DC).</string>
+    <string name="NovenaPractica_descripcion">En la siguiente practica aprenderás como tomar lecturas analógicas de una batería de 5V
+y dichas lecturas analógicas convertirlas a digitales para ser desplegada en la pantalla LCD
+de 16x2.
+</string>
+    <string name="NovenaPractica_info">•\t 1 Protoboard.\n
+ •\t 1 PIC18F4620.\n
+ •\t 1 Resistencia de 10 kΩ.\n
+        •\t Cristal oscilador de 20 MHz.\n
+ •\t 2 Capacitores cerámicos de 22 pF.\n
+ •\t Cables dupont.\n
+ •\t Fuente de voltaje de 5 V.\n
+        •\t 1 Potenciometro de 10KΩ\n
+        •\t 1 LCD 16x2\n
+                •\t 1 Resistencia de 1KΩ\n
+    </string>
+
+    <string name="DecimaPractica_nombre">Control de velocidad de un motor DC con PWM</string>
+    <string name="DecimaPractica_descripcion">En esta práctica aprenderemos a usar el PWM con PIC (Modulación por Ancho de Pulso),
+la cual es una de las señales más utilizadas para realizar control con nuestros
+microcontroladores. Con lo que vamos a ver aquí aprenderás a configurar las velocidades
+del PWM PIC.
+</string>
+    <string name="DecimaPractica_info">•\t 1 Protoboard.\n
+ •\t 1 PIC18F4620.\n
+ •\t 3 Resistencia de 10 kΩ.\n
+        •\t Cristal oscilador de 20 MHz.\n
+ •\t 2 Capacitores cerámicos de 22 pF.\n
+ •\t Cables dupont.\n
+ •\t Fuente de voltaje de 5 V.\n
+        •\t 1 Potenciometro de 10KΩ\n
+        •\t 1 LCD 16x2\n
+                •\t 1 Motor DC\n
+                        •\t 1 Puente H L293D\n
+     •\t 2 Push buttons.\n
+                        •\t 1 Resistencia de 1KΩ\n
+    </string>
+
+    <string name="DecimaPrimeraPractica_nombre">Control de LED RGB por PWM.</string>
+    <string name="DecimaPrimeraPractica_descripcion">El LED RGB (light emitting diode red gren blue) contienen tres diodos emisores de luz en su interior. El propósito de este es poder crear, en teoría, toda la gamma de colores posibles mezclando cada color con intensidades distintas. Cuando se mezclan los tres a la misma intensidad de obtiene el blanco.</string>
+    <string name="DecimaPrimeraPractica_info"> •\t1 Protoboard.\n
+                •\t1 PIC18F4620.\n
+                •\t1 Resistencia de 10 kΩ.\n
+                •\tCristal oscilador de 20 MHz.\n
+                •\t2 Capacitores cerámicos de 22 pF.\n
+                •\t1 LED RGB.\n
+                •\tFuente de voltaje de 5 V.\n
+                •\t3 Resistencia de 220 Ω.\n
+                •\tCables dupont.\n
+    </string>
+
+    <string name="DecimaSegundaPractica_nombre">Sensor PIR.</string>
+    <string name="DecimaSegundaPractica_descripcion">En esta práctica estaremos usando un sensor de movimiento o PIR para crear una alarma que activará un buzzer al detectar movimiento. PIR es un sensor infrarrojo pasivo que podremos utilizar en muchos proyectos y además es muy barato, este es un muy buen proyecto para comenzar con el uso de sensores con el PIC18F4620.</string>
+    <string name="DecimaSegundaPractica_info">•\t 1 Protoboard.\n
+•\t 1 PIC18F4620.\n
+•\t 1 Resistencia de 10 kΩ.\n
+•\t Cristal oscilador de 20 MHz.\n
+•\t 2 Capacitores cerámicos de 22 pF.\n
+•\t Fuente de voltaje de 5 V.\n
+•\t 1 Buzzer.\n
+•\t Cables dupont.\n
+•\t 1 LCD 16x2.\n
+        •\t 1 Potenciometro de 10KΩ\n
+                        •\t1 LED.\n
+                        •\t1 Resistencia de 220 Ω.\n
+    </string>
+
+    <string name="DecimaTerceraPractica_nombre">Comunicación serial PIC-Android mediante Bluetooth.</string>
+    <string name="DecimaTerceraPractica_descripcion">Se denomina Bluetooth al protocolo de comunicaciones diseñado especialmente para dispositivos de bajo consumo, que requieren corto alcance de emisión y basados en transceptores de bajo costo. El módulo que se usará para las prácticas es el HC-05 que tiene 6 patillas, el cual puede configurarse tanto como Máster como Slave, y que además dispone de bastante más parámetros de configuración y capacidades de interrogación.</string>
+    <string name="DecimaTerceraPractica_info">•\t 1 Protoboard.\n
+ •\t 1 PIC18F4620.\n
+ •\t 1 Resistencia de 10 kΩ.\n
+        •\t Cristal oscilador de 20 MHz.\n
+ •\t 2 Capacitores cerámicos de 22 pF.\n
+ •\t Cables dupont.\n
+ •\t Fuente de voltaje de 5 V.\n
+        •\t 1 Potenciometro de 10KΩ\n
+        •\t 1 LCD 16x2\n
+            •\t 3 LEDs\n
+        •\t 3 Resistencias 220Ω\n
+        •\t 1 Bluetooth HC-05\n
+    </string>
+
+    <string name="informacionPIC">Un PIC es un circuito integrado programable (Programmable Integrated Circuited), el cual contiene todos los componentes para poder realizar y controlar una tarea, por lo que se denomina como un microcontrolador.
+    </string>
+
+
+</resources>

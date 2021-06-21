@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/letras"
+    tools:context=".fragments.ResistenciaFragment">
+
+    <!--TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculo de Resistencias"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center_horizontal"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/id_res4"
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:src="@drawable/res4" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="153dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:id="@+id/id_res5"
+            android:visibility="gone"
+            android:src="@drawable/res5" />
+
+
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Numero de bandas:          "
+            android:textStyle="bold"
+            android:textOff="4"
+            android:textOn="5"
+            android:showText="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/id_switch"/>
+
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:id="@+id/spinner3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:id="@+id/spinner4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1" />
+
+
+        </TableRow>
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+
+                <Spinner
+                    android:id="@+id/spinner5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1" />
+
+                <Spinner
+                    android:id="@+id/spinner6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1" />
+
+                <Spinner
+                    android:id="@+id/spinner7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1" />
+
+                <Spinner
+                    android:id="@+id/spinner8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1" />
+
+                <Spinner
+                    android:id="@+id/spinner9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1" />
+
+
+            </TableRow>
+        </LinearLayout>
+
+
+
+        <Button
+        android:id="@+id/calcular"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:textColor="@color/letras"
+        android:background="@color/colorPrimaryDark"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/res_Resultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Resultado: "
+        android:textSize="24sp"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorPrimaryDark"
+/>
+
+    </LinearLayout>
+
+    </FrameLayout>

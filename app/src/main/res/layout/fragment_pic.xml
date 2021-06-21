@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/letras"
+    tools:context=".devicesfragments.PICFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/txt_pic1"
+            android:layout_width="match_parent"
+            android:textColor="@color/letra_negras"
+            android:layout_height="wrap_content"
+            android:text="@string/informacionPIC"/>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:text="PIC18F4620"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pic184620"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+                    <TextView
+                        android:text="Cualidad del producto"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="Valor de la cualidad"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Memoria EEPROM"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="1024 B"
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Entrada -Salida"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="36"
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Interfaz"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text=" SPI/I2C/USART "
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Número máximo de los canales de I2C"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="1"
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Número máximo de los canales de LIN"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="1"
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Número máximo de los canales de SPI"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="1"
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Número máximo de los canales de UART"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="1"
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Temperatura de funcionamiento máximo"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text=" +85 °C "
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Temperatura de funcionamiento minima"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text=" -40 °C "
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Número de ADCs"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="13 pedacito 10 x"
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Número de las unidades de PWM"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="1"
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Número de contadores de tiempo"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="4"
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Voltaje de funcionamiento"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/letra_negras"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="4.2V a 5.5V"
+                        android:layout_weight="1"
+                        android:textColor="@color/letra_negras"
+                        android:gravity="center"
+                        android:padding="3dip" />
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:text="Para más información, consultar el datasheet"
+            android:textStyle="normal|italic"/>
+    </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
